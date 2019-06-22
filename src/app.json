@@ -1,0 +1,20 @@
+{
+  "window": {
+    "navigationStyle": "custom",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "usingComponents": {
+    "wux-navbar": "/static/uilibs/wux-weapp/navbar/index",
+    "wux-icon": "/static/uilibs/wux-weapp/icon/index",
+    "wux-badge": "/static/uilibs/wux-weapp/badge/index",
+    "wux-tabbar": "/static/uilibs/wux-weapp/tabbar/index",
+    "wux-tabbar-item": "/static/uilibs/wux-weapp/tabbar-item/index"
+  }
+}
