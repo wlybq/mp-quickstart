@@ -1,6 +1,6 @@
 # mp-quickstart
 
->
+> 个人微信小程序快速开发模板
 
 
 # 安装和编译
@@ -19,7 +19,7 @@ npm run build
 npm run build:test    // 测试服编译
 npm run build:ready   // 预发布编译
 npm run build:master  // 正式服编译
-
+```
 
 # 项目目录结构
 
