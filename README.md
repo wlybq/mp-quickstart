@@ -1,6 +1,6 @@
-# shop-mp
+# mp-quickstart
 
-> 云商小程序
+>
 
 
 # 安装和编译
@@ -35,10 +35,12 @@ npm run build:master  // 正式服编译
     |   |—— app.json 小程序全局配置文件
     |   |—— App.vue 页面入口文件
     |   |—— main.json 脚本入口文件
+    |   |—— 路径配置入口
     |   └── ...
     |—— static 项目静态资源文件
+    |   |—— styles 公共样式定义
+    |   |—— uilibs 第三方ui框架，编译时要复制到dist目录下，并配置文件声明依赖
     |   └── ...
-    |—— uilibs 第三方ui框架，编译时要复制到dist目录下，并配置文件声明依赖
     |—— .babelrc babel配置文件
     |—— .editorconfig 编辑器配置文件
     |—— .gitignore git版本控制排除文件
