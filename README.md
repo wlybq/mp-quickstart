@@ -39,7 +39,7 @@ npm run build:master  // 正式服编译
     |   └── ...
     |—— static 项目静态资源文件
     |   |—— styles 公共样式定义
-    |   |—— uilibs 第三方ui框架，编译时要复制到dist目录下，并配置文件声明依赖
+    |   |—— uilibs 第三方ui框架
     |   └── ...
     |—— .babelrc babel配置文件
     |—— .editorconfig 编辑器配置文件

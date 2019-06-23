@@ -3,3 +3,23 @@
 /**
 全局样式表
  */
+
+ .page {
+  .header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-top: 40rpx;
+    background: #444;
+    z-index: 10000;
+  }
+  .container {
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding-top: 138rpx;
+    padding-bottom: 100rpx;
+  }
+  .footer {
+  }
+}
