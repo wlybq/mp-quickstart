@@ -34,7 +34,8 @@ module.exports = {
       rules: resolve('src/rules'),
       mixins: resolve('src/mixins'),
       store: resolve('src/store'),
-      config: resolve('src/config')
+      config: resolve('src/config'),
+      static: resolve('static')
     },
     symlinks: false,
     aliasFields: ['mpvue', 'weapp', 'browser'],

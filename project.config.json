@@ -25,7 +25,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.2",
-	"appid": "",
+	"appid": "wx0958cd2bdcd2d371",
 	"projectname": "mp-quickstart",
 	"miniprogramRoot": "dist/",
 	"debugOptions": {
