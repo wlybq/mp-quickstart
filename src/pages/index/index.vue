@@ -6,9 +6,17 @@
       </wux-navbar>
     </div>
     <div class="container">
-      <wux-cell-group title="自定义组件">
+      <!-- <wux-cell-group title="自定义组件">
         <NumberControl :value="count" @sub="(val) => this.$store.commit('sub', val)" @plus="(val) => this.$store.commit('plus', val)"/>
-      </wux-cell-group>
+      </wux-cell-group> -->
+      <swiper :circular="true" @change="swiperChange($event)" :current="current" class="swiper">
+        <div v-for="item of list" :key="item.id">
+          <swiper-item @touchmove='touchMove($event)'>
+            {{ item.contact }}
+          </swiper-item>
+        </div>
+      </swiper>
+      <!-- <div style="height: 100%"></div> -->
     </div>
     <div class="footer">
       <wux-tabbar defaultCurrent="tab1" position="bottom" @change="navChange" :safeArea="true">

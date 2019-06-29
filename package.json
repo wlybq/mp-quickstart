@@ -20,6 +20,7 @@
     "iview-weapp": "^2.0.0",
     "js-base64": "^2.4.9",
     "js-md5": "^0.7.3",
+    "lodash": "^4.17.11",
     "minapp-api-promise": "^1.0.2",
     "mpvue": "^1.0.11",
     "mpvue-router-patch": "^0.2.1",
