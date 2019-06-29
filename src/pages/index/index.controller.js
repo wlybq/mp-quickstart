@@ -6,10 +6,7 @@ import { uniqueId, range } from 'lodash'
 export default {
   data () {
     return {
-      list: range(3).map((item) => ({
-        id: uniqueId('uniqueId_'),
-        contact: ''
-      })),
+      list: '',
       queue: range(10).map(() => uniqueId('contact_')),
       currentQueueIndex: 0,
       current: 0,
@@ -24,18 +21,19 @@ export default {
   watch: {
     count () {
       console.log(this.count)
-    },
-    currentQueueIndex () {
-      if (this.currentQueueIndex >= this.queue.length - 2) {
-        this.queue = [...this.queue, ...range(10).map(() => uniqueId('contact_'))]
-      }
     }
+    // currentQueueIndex () {
+    //   if (this.currentQueueIndex >= this.queue.length - 2) {
+    //     this.queue = [...this.queue, ...range(10).map(() => uniqueId('contact_'))]
+    //   }
+    // }
   },
   // 页面挂载
   mounted () {
-    this.list.forEach((item, i) => {
-      item.contact = this.queue[i]
-    })
+    this.list = range(3).map((item, i) => ({
+      id: uniqueId('uniqueId_'),
+      contact: this.queue[i]
+    }))
   },
   methods: {
     navChange ({mp: {detail: { key }}}) {
@@ -66,19 +64,24 @@ export default {
         }
       }
       this.stop = true
-      const currentQueueIndex = this.currentQueueIndex % 3
-      if (current === 0) {
-        // [current, next, prev]
-        this.list[currentQueueIndex + 1].contact = this.queue[this.currentQueueIndex + 1] // next
-        this.list[currentQueueIndex + 2].contact = this.queue[this.currentQueueIndex - 1] // prev
-      } else if (current === 1) {
-        // [prev, current, next]
-        this.list[currentQueueIndex + 1].contact = this.queue[this.currentQueueIndex + 1] // next
-        this.list[currentQueueIndex - 1].contact = this.queue[this.currentQueueIndex - 1] // prev
-      } else {
-        // [next, prev, current]
-        this.list[currentQueueIndex - 2].contact = this.queue[this.currentQueueIndex + 1] // next
-        this.list[currentQueueIndex - 1].contact = this.queue[this.currentQueueIndex - 1] // prev
+      const index = this.currentQueueIndex % 3 // 列表当前下标与当前swiper下标映射
+      const prev = this.queue[this.currentQueueIndex - 1] // prev
+      const next = this.queue[this.currentQueueIndex + 1] // next
+      switch (index) {
+        case 0:
+          // [current, next, prev]
+          this.list[index + 1].contact = next
+          this.list[index + 2].contact = prev
+          break
+        case 1:
+          // [prev, current, next]
+          this.list[index + 1].contact = next
+          this.list[index - 1].contact = prev
+          break
+        case 2:
+          // [next, prev, current]
+          this.list[index - 2].contact = next
+          this.list[index - 1].contact = prev
       }
       this.current = current
     },
@@ -87,4 +90,3 @@ export default {
     }
   }
 }
-
