@@ -8,6 +8,7 @@ const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const utils = require('./utils')
 const config = require('../config')
 const baseWebpackConfig = require('./webpack.base.conf')
+const CleanPlugin = require('./cleanPlugin')
 
 const env = config.build.env
 
@@ -72,7 +73,9 @@ const webpackConfig = merge(baseWebpackConfig, {
         to: config.build.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
+    // 清除build dist文件多余文件
+    new CleanPlugin()
   ]
 })
 
